@@ -34,6 +34,7 @@ public class ActivityTest extends ActivityInstrumentationTestCase2<ResourceExerc
         mActivity = getActivity(); // This will actually start the activity
         getInstrumentation().waitForIdleSync(); // Wait for animations to complete and acitvity enter idle state
         // Setup logic goes here
+
     }
 
     public void testStringsXML() {
@@ -79,8 +80,8 @@ public class ActivityTest extends ActivityInstrumentationTestCase2<ResourceExerc
             bm = ((BitmapDrawable) resources.getDrawable(drawableRedIdentifier, null)).getBitmap();
         }
 
-        Assert.assertEquals("actual height value: " + bm.getHeight(), 40, bm.getHeight());
-        Assert.assertEquals("actual width value: " + bm.getWidth(), 40, bm.getWidth());
+        Assert.assertEquals("actual height value: " + bm.getHeight(), 60, bm.getHeight());
+        Assert.assertEquals("actual width value: " + bm.getWidth(), 60, bm.getWidth());
         Assert.assertEquals(0xFFFF0000, bm.getPixel(0, 0));
     }
 
@@ -102,8 +103,8 @@ public class ActivityTest extends ActivityInstrumentationTestCase2<ResourceExerc
             bm = ((BitmapDrawable) resources.getDrawable(drawableBlueIdentifier, null)).getBitmap();
         }
 
-        Assert.assertEquals(40, bm.getHeight());
-        Assert.assertEquals(40, bm.getWidth());
+        Assert.assertEquals(60, bm.getHeight());
+        Assert.assertEquals(60, bm.getWidth());
         Assert.assertEquals(0xFF0000FF, bm.getPixel(0, 0));
 
     }
@@ -157,6 +158,7 @@ public class ActivityTest extends ActivityInstrumentationTestCase2<ResourceExerc
         assertEquals("N/A", tv.getText());
     }
 
+
     public void testGradeCalculator() {
         // Make sure the grade calculator works correctly
         // 100   -> A+
@@ -207,6 +209,9 @@ public class ActivityTest extends ActivityInstrumentationTestCase2<ResourceExerc
         // assertEquals("A+", tv.getText());
 
     }
+
+
+
 
     public void testLayoutDensity() {
         // hdpi
